@@ -46,6 +46,7 @@ jobs:
         brew install eigen
         brew install libomp
         brew install openblas
+        brew install suite-sparse
         brew install sundials
         export BUILD_ROOT=$(pwd);
         cd /Users/runner/work/nelson;
@@ -136,6 +137,8 @@ jobs:
         brew install eigen
         brew install libomp
         brew install openblas
+        brew install suite-sparse
+        brew install sundials
         export BUILD_ROOT=$(pwd);
         cd /Users/runner/work/nelson;
         git clone https://github.com/Nelson-numerical-software/nelson-thirdparty-macosx.git;
@@ -220,6 +223,8 @@ jobs:
         brew install eigen
         brew install libomp
         brew install openblas
+        brew install suite-sparse
+        brew install sundials
         export BUILD_ROOT=$(pwd);
         cd /Users/runner/work/nelson;
         git clone https://github.com/Nelson-numerical-software/nelson-thirdparty-macosx.git;
@@ -511,6 +516,8 @@ jobs:
           pacman -S curl --noconfirm
           pacman -S libgit2 --noconfirm
           pacman -S python3 --noconfirm
+          pacman -S suitesparse --noconfirm
+          pacman -S sundials --noconfirm
           git clone https://gitlab.com/libeigen/eigen.git /tmp/eigen
           mkdir /tmp/eigen-build && cd /tmp/eigen && git checkout 3.4 && cd - && cd /tmp/eigen-build && cmake . /tmp/eigen && make -j4 && make install;        
           git clone https://github.com/HDFGroup/hdf5.git /tmp/hdf5-1_12_1
@@ -589,6 +596,8 @@ jobs:
           dnf install -y matio-devel
           dnf install -y hdf5-devel
           dnf install -y eigen3-devel
+          dnf install -y sundials-devel
+          dnf install -y suitesparse-devel
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Get package version 

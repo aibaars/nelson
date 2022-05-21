@@ -12,6 +12,7 @@ set(module_library_name nlsOde)
 set(module_library_builtin_name ${module_library_name}_builtin)
 # ==============================================================================
 include_directories(
+  ${SUNDIALS_INCLUDE_DIRS}
   ${SUNDIALS_INCLUDE_DIR}
   ${EIGEN3_INCLUDE_DIR}
   ${Boost_INCLUDE_DIRS}
@@ -40,7 +41,7 @@ target_link_libraries(
   nlsStream_manager
   nlsTypes
   nlsI18n
-  SUNDIALS::SUNDIALS)
+  ${SUNDIALS_LIBRARIES})
 # ==============================================================================
 set_target_properties(
   ${module_library_name}
