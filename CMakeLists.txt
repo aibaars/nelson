@@ -119,6 +119,16 @@ find_package(CURL REQUIRED)
 find_package(Libgit2 REQUIRED)
 find_package(OpenMP)
 # ==============================================================================
+OPTION(USE_SUNDIALS "Enable SUNDIALS library" OFF)
+# ==============================================================================
+if (USE_SUNDIALS)
+  set(HAS_SUNDIALS FALSE)
+  find_package(Sundials MODULE)
+  if (SUNDIALS_FOUND)
+    set(HAS_SUNDIALS TRUE)
+  endif (SUNDIALS_FOUND)
+endif (USE_SUNDIALS)
+# ==============================================================================
 if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
   find_package(ALSA REQUIRED)
   find_package(Jack REQUIRED)

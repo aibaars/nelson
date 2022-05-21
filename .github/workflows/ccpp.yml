@@ -46,6 +46,7 @@ jobs:
         brew install eigen
         brew install libomp
         brew install openblas
+        brew install sundials
         export BUILD_ROOT=$(pwd);
         cd /Users/runner/work/nelson;
         git clone https://github.com/Nelson-numerical-software/nelson-thirdparty-macosx.git;

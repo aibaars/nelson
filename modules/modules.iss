@@ -80,4 +80,6 @@ Source: {#RootPath}modules\modules.m; DestDir: {app}\modules\; AfterInstall: Aft
 #include "statistics/module.iss"
 #include "validators/module.iss"
 #include "polynomial_functions/module.iss"
+#include "ode/module.iss"
+
 ;==============================================================================
